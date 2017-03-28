@@ -15,7 +15,9 @@ namespace FaceVerification
         private Capture captar;
         Recognition rec = new Recognition();
         ConexionBD bd = new ConexionBD();
+        PersistentIdList pil = new PersistentIdList();
         private Image<Bgr, Byte> imgOriginal;
+        public static string PID="";
         public Form1()
         {
             InitializeComponent();
@@ -33,9 +35,9 @@ namespace FaceVerification
                 Environment.Exit(0);
                 return;
             }
-            Application.Idle += processFrameAndUpdateGUI;
+            Application.Idle += ProcessFrameAndUpdateGUI;
         }
-        void processFrameAndUpdateGUI(object sender, EventArgs arg)//Metodo para actualizar la imagen que captura la camara
+        void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)//Metodo para actualizar la imagen que captura la camara
         {
             imgOriginal = captar.QueryFrame().ToImage<Bgr, Byte>();; //Asignación de la imagen capturasa al objeto imgOriginal 
             if (imgOriginal == null)
@@ -48,17 +50,17 @@ namespace FaceVerification
             pictureBox1.Image =img; //Asignación de la imagen como atributo de la forma (imageBox)
         }
 
-        private void btntakepic_Click(object sender, EventArgs e)
+        private void Btntakepic_Click(object sender, EventArgs e)
         {
             pictureBox1.Image.Save("Image.jpg");
         }
 
-        private void btnidorig_Click(object sender, EventArgs e)
+        private void Btnidorig_Click(object sender, EventArgs e)
         {
-             rec.DetecFacesAndDisplayResult("Image.jpg","5fc4f455ea874e91ab731db2b97120e1",tbname.Text,Convert.ToInt32(tbage.Text));
+            pil.AddListId("Image.jpg", "12476023b4c349939778c49e5db321d6", tbname.Text, Convert.ToInt32(tbage.Text),tbDescription.Text);
             tbage.Text = "";
             tbname.Text = "";
+            tbDescription.Text = "";
         }
-
     }
 }

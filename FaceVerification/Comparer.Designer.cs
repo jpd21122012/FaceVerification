@@ -31,6 +31,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.btnTakepic = new System.Windows.Forms.Button();
+            this.tbalerta = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.btnEnter.TabIndex = 1;
             this.btnEnter.Text = "Entrar";
             this.btnEnter.UseVisualStyleBackColor = true;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
+            this.btnEnter.Click += new System.EventHandler(this.BtnEnter_Click);
             // 
             // btnTakepic
             // 
@@ -61,13 +62,22 @@
             this.btnTakepic.TabIndex = 2;
             this.btnTakepic.Text = "Capturar";
             this.btnTakepic.UseVisualStyleBackColor = true;
-            this.btnTakepic.Click += new System.EventHandler(this.btnTakepic_Click);
+            this.btnTakepic.Click += new System.EventHandler(this.BtnTakepic_Click);
+            // 
+            // tbalerta
+            // 
+            this.tbalerta.BackColor = System.Drawing.Color.Red;
+            this.tbalerta.Location = new System.Drawing.Point(12, 73);
+            this.tbalerta.Name = "tbalerta";
+            this.tbalerta.Size = new System.Drawing.Size(180, 20);
+            this.tbalerta.TabIndex = 3;
             // 
             // Comparer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 473);
+            this.Controls.Add(this.tbalerta);
             this.Controls.Add(this.btnTakepic);
             this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.pictureBox1);
@@ -76,6 +86,7 @@
             this.Load += new System.EventHandler(this.Comparer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -84,5 +95,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Button btnTakepic;
+        public System.Windows.Forms.TextBox tbalerta;
     }
 }
