@@ -17,7 +17,7 @@ namespace FaceVerification
         ConexionBD bd = new ConexionBD();
         PersistentIdList pil = new PersistentIdList();
         private Image<Bgr, Byte> imgOriginal;
-        public static string PID="";
+        public static string PID = "";
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace FaceVerification
         }
         void ProcessFrameAndUpdateGUI(object sender, EventArgs arg)//Metodo para actualizar la imagen que captura la camara
         {
-            imgOriginal = captar.QueryFrame().ToImage<Bgr, Byte>();; //Asignación de la imagen capturasa al objeto imgOriginal 
+            imgOriginal = captar.QueryFrame().ToImage<Bgr, Byte>(); ; //Asignación de la imagen capturasa al objeto imgOriginal 
             if (imgOriginal == null)
             {
                 MessageBox.Show("unable to read frame from webcam " + "exiting program");
@@ -47,7 +47,7 @@ namespace FaceVerification
                 return;
             }
             Image img = imgOriginal.ToBitmap();
-            pictureBox1.Image =img; //Asignación de la imagen como atributo de la forma (imageBox)
+            pictureBox1.Image = img; //Asignación de la imagen como atributo de la forma (imageBox)
         }
 
         private void Btntakepic_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace FaceVerification
 
         private void Btnidorig_Click(object sender, EventArgs e)
         {
-            pil.AddListId("Image.jpg", "12476023b4c349939778c49e5db321d6", tbname.Text, Convert.ToInt32(tbage.Text),tbDescription.Text);
+            pil.AddListId("Image.jpg", "2bddec152651472a8cb690e00db31a43", tbname.Text, Convert.ToInt32(tbage.Text), tbDescription.Text);
             tbage.Text = "";
             tbname.Text = "";
             tbDescription.Text = "";

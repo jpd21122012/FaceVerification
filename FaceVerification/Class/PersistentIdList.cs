@@ -26,10 +26,10 @@ namespace FaceVerification.Class
                 {
                     var client = new FaceServiceClient(subscriptionKey);
                     //var faces1 = await client.DetectAsync(fileStream, true);
-                    var faces = await client.AddFaceToFaceListAsync("21122012", fileStream, name);
+                        var faces = await client.AddFaceToFaceListAsync("21122011", fileStream, name);
                     Console.WriteLine(" >> PId: " + faces.PersistedFaceId.ToString());
                     Form1.PID = faces.PersistedFaceId.ToString();
-                    ConexionBD.GuardarInfo(name, edad, descrip, Form1.PID);
+                    //ConexionBD.GuardarInfo(name, edad, descrip, Form1.PID);
                     //Comparer.idActual = faces.PersistedFaceId.ToString();
                 }
                 catch (Exception exception)
@@ -69,7 +69,7 @@ namespace FaceVerification.Class
                 try
                 {
                     var client = new FaceServiceClient(subscriptionKey);
-                    var faces = await client.FindSimilarAsync(guidId, "21122012", 2);
+                    var faces = await client.FindSimilarAsync(guidId, "21122012", 1);
                     Console.WriteLine(" >> PId: " + faces[0].ToString() + faces[1].ToString());
                     //Comparer.idActual = faces.PersistedFaceId.ToString();
                 }

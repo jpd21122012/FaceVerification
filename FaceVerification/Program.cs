@@ -17,8 +17,8 @@ namespace FaceVerification
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Comparer());
-            //Application.Run(new Form1());
+           // Application.Run(new Comparer());
+            Application.Run(new Form1());
             //ConexionBD bd = new ConexionBD();
             //bd.ConectTest();
             //Console.Read();
